@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PTY | Percy Torres Yapias · Asesor de inversiones inmobiliarias</title>
+<meta name="description" content="Asesoría inmobiliaria en Perú: lotes de inversión, stands y locales, departamentos y casas, y preventas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f2e26; --ink-2:#2b4a41; --chalk:#f5f6f2; --paper:#ffffff;
+  --ochre:#c8963e; --ochre-d:#8f6718; --line:#d9ddd5; --muted:#5b6b64;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--chalk);color:var(--ink);line-height:1.6;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+header{background:var(--chalk);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mark{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--ochre);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:15px;letter-spacing:.04em}
+.brand b{display:block;font-weight:600;line-height:1.2}
+.brand small{display:block;color:var(--muted);font-size:13px;line-height:1.2}
+nav{display:flex;gap:28px;font-size:15px;font-weight:500}
+nav a{text-decoration:none;color:var(--ink-2)}
+nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:6px}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:8px;background:var(--ink);color:#fff;font-weight:600;font-size:16px;text-decoration:none;border:2px solid var(--ink);transition:background .15s}
+.btn:hover{background:var(--ink-2);border-color:var(--ink-2)}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.alt:hover{background:var(--ink);color:#fff}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+.hero{padding:72px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-.01em;margin-bottom:20px}
+.lead{font-size:19px;color:var(--ink-2);max-width:52ch;margin-bottom:32px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+.plan{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
+.plan-grid{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(4,52px);gap:6px;position:relative}
+.plan-grid span{background:#e8ece4;border:1px solid #cfd6c9;border-radius:3px}
+.plan-grid span.road{grid-column:1/-1;background:transparent;border:0;border-top:2px dashed #b9c2b2;border-bottom:2px dashed #b9c2b2;height:auto;display:grid;place-items:center;font-size:12px;color:var(--muted)}
+.plan-grid span.pick{background:var(--ochre);border-color:var(--ochre-d);display:grid;place-items:center;color:var(--ink);font-weight:600;font-size:13px}
+.plan figcaption{margin-top:14px;font-size:14px;color:var(--muted)}
+
+section{padding:72px 0}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(26px,3.5vw,36px);line-height:1.15;margin-bottom:12px}
+.sub{color:var(--muted);max-width:56ch;margin-bottom:40px}
+
+.lines{border-top:1px solid var(--ink)}
+.line{display:grid;grid-template-columns:1fr 1.4fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+.line h3{font-family:var(--serif);font-size:22px;line-height:1.2}
+.line p{color:var(--ink-2);font-size:16px}
+.line a{font-weight:600;white-space:nowrap;color:var(--ochre-d)}
+
+.trust{background:var(--ink);color:#fff}
+.trust h2{color:#fff}
+.trust .sub{color:#c3d0ca}
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;list-style:none}
+.checks li{border-top:2px solid var(--ochre);padding-top:16px}
+.checks b{display:block;font-size:18px;margin-bottom:6px}
+.checks span{color:#c3d0ca;font-size:15px}
+
+.contact .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.contact p{color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+@media (max-width:860px){
+  nav{display:none}
+  .hero{padding:48px 0 56px}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .line{grid-template-columns:1fr;gap:8px}
+  .checks{grid-template-columns:1fr;gap:24px}
+  section{padding:56px 0}
+}
+@media (max-width:480px){
+  .brand small{display:none}
+  .bar .btn{padding:11px 14px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="PTY, inicio">
+      <span class="mark">PTY</span>
+      <span><b>Percy Torres Yapias</b><small>Asesor de inversiones inmobiliarias</small></span>
+    </a>
+    <nav aria-label="Principal">
+      <a href="#portafolio">Portafolio</a>
+      <a href="#respaldo">Respaldo legal</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn" href="https://wa.me/51956797074?text=Hola%20Percy%2C%20deseo%20asesor%C3%ADa%20sobre%20inversiones%20inmobiliarias" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 1.9 17.8L0 24l6.4-1.7A11.8 11.8 0 0 0 12 23.8h.1A11.8 11.8 0 0 0 20.5 3.5zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4A9.8 9.8 0 1 1 12 21.8zm5.4-7.3c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1-.8 1-.9 1.1-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.7-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4.1c1.7.7 2.4.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>
+      Escribir por WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Invierte con visión y construye tu patrimonio.</h1>
+        <p class="lead">Te oriento en la compra de lotes, locales, departamentos y preventas en Perú, con documentos claros desde la primera reunión.</p>
+        <div class="actions">
+          <a class="btn" href="#portafolio">Ver portafolio</a>
+          <a class="btn alt" href="https://wa.me/51956797074?text=Hola%20Percy%2C%20solicito%20el%20cat%C3%A1logo%20en%20PDF%20de%20proyectos" target="_blank" rel="noopener">Pedir catálogo en PDF</a>
+        </div>
+      </div>
+      <figure class="plan" aria-hidden="true">
+        <div class="plan-grid">
+          <span></span><span></span><span></span><span class="pick">Tu lote</span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span class="road">Av. principal</span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <figcaption>Plano ilustrativo de lotización.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="portafolio" style="background:var(--paper)">
+    <div class="wrap">
+      <h2>Cuatro formas de invertir en inmuebles</h2>
+      <p class="sub">Elige según tu objetivo: valorización del terreno, renta mensual o un hogar propio.</p>
+      <div class="lines">
+        <div class="line">
+          <h3>Lotes de inversión</h3>
+          <p>Terrenos en zonas con proyección de crecimiento y habilitación urbana. Consulta las opciones de financiamiento directo.</p>
+          <a href="https://wa.me/51956797074?text=Hola%20Percy%2C%20deseo%20informaci%C3%B3n%20sobre%20Lotes%20de%20Inversi%C3%B3n" target="_blank" rel="noopener">Consultar lotes</a>
+        </div>
+        <div class="line">
+          <h3>Stands y locales</h3>
+          <p>Espacios comerciales en zonas de alto tránsito, para generar renta mensual o abrir tu propio negocio.</p>
+          <a href="https://wa.me/51956797074?text=Hola%20Percy%2C%20deseo%20informaci%C3%B3n%20sobre%20Stands%20y%20Locales%20Comerciales" target="_blank" rel="noopener">Ver locales</a>
+        </div>
+        <div class="line">
+          <h3>Departamentos y casas</h3>
+          <p>Proyectos residenciales con demanda para vivir, alquilar de forma tradicional o publicar en Airbnb.</p>
+          <a href="https://wa.me/51956797074?text=Hola%20Percy%2C%20deseo%20informaci%C3%B3n%20sobre%20Departamentos%20y%20Casas" target="_blank" rel="noopener">Ver viviendas</a>
+        </div>
+        <div class="line">
+          <h3>Preventas y nuevas oportunidades</h3>
+          <p>Lanzamientos en etapa inicial, donde entras con precios de preventa antes de que el proyecto avance.</p>
+          <a href="https://wa.me/51956797074?text=Hola%20Percy%2C%20deseo%20informaci%C3%B3n%20sobre%20Preventas%20y%20Nuevas%20Oportunidades" target="_blank" rel="noopener">Ver preventas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="respaldo" class="trust">
+    <div class="wrap">
+      <h2>Compra con respaldo legal</h2>
+      <p class="sub">Antes de firmar, revisas los documentos del inmueble con calma y con acompañamiento.</p>
+      <ul class="checks">
+        <li><b>Partida registral</b><span>Verificación del inmueble en SUNARP.</span></li>
+        <li><b>Trato directo</b><span>Hablas con quien te asesora, sin intermediarios de por medio.</span></li>
+        <li><b>Contrato notarial</b><span>Acuerdos formales por escrito, con asesoría notarial.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <div class="wrap">
+      <div>
+        <h2>Agenda tu asesoría</h2>
+        <p>Cuéntame qué buscas y coordinamos una reunión.</p>
+      </div>
+      <a class="btn" href="https://wa.me/51956797074?text=Hola%20Percy%2C%20deseo%20agendar%20una%20reuni%C3%B3n%20de%20asesor%C3%ADa%20inmobiliaria" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 1.9 17.8L0 24l6.4-1.7A11.8 11.8 0 0 0 12 23.8h.1A11.8 11.8 0 0 0 20.5 3.5zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4A9.8 9.8 0 1 1 12 21.8zm5.4-7.3c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1-.8 1-.9 1.1-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.7-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4.1c1.7.7 2.4.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>
+        WhatsApp +51 956 797 074
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>PTY · Percy Torres Yapias, asesor de inversiones inmobiliarias</span>
+    <span>Invierte con visión, construye tu patrimonio.</span>
+  </div>
+</footer>
+
+</body>
+</html>
